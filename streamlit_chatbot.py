@@ -44,14 +44,14 @@ if uploaded_file is not None and question:
     data = loader.load_and_split()
 
     # Create vector store
-    vectorstore = Chroma.from_documents(documents=data, embedding=OpenAIEmbeddings(openai_api_key="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"))
+    vectorstore = Chroma.from_documents(documents=data, embedding=OpenAIEmbeddings(openai_api_key=os.environ.get('OPENAI_API_KEY')))
 
     # Retrieve relevant documents
     retriever = vectorstore.as_retriever(k=4)
     docs = retriever.invoke(question)
 
     # Chat initialization
-    chat = ChatOpenAI(model="gpt-3.5-turbo-1106", temperature=0.2, openai_api_key="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")
+    chat = ChatOpenAI(model="gpt-3.5-turbo-1106", temperature=0.2, openai_api_key=os.environ.get('OPENAI_API_KEY'))
 
     # Set up system template
     SYSTEM_TEMPLATE = """
