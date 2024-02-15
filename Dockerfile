@@ -8,9 +8,7 @@ ENV PORT=8501
 # Set working directory
 WORKDIR /app
 
-# Copy necessary files
-COPY requirements.txt .
-COPY streamlit_app.py .   
+COPY . /app  
 
 # Install dependencies
 RUN pip install -r requirements.txt
