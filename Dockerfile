@@ -10,8 +10,7 @@ COPY . /app
 
 # Install dependencies
 RUN pip install -r requirements.txt
-RUN sudo apt update
-RUN sudo apt upgrade sqlite3
+RUN apt-get update && apt-get install -y sqlite3
 
 
 CMD ["streamlit", "run", "streamlit_chatbot.py", "--server.port=8501", "--server.address=0.0.0.0"] 
