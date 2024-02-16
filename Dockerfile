@@ -12,4 +12,4 @@ COPY . /app
 RUN pip install -r requirements.txt
 
 
-CMD ["streamlit", "run", "streamlit_chatboat.py", "--server.port=8501", "--server.address=0.0.0.0"] 
+CMD ["streamlit", "run", "streamlit_chatbot.py", "--server.port=8501", "--server.address=0.0.0.0"] 
