@@ -1,4 +1,4 @@
-#!/Users/deveshsharma/Downloads/upsc_chatboat/upsc_chatboat/bin/python3.10
+#!/Users/deveshsharma/Downloads/upsc_chatboat/upsc_chatboat/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys
